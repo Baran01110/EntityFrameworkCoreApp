@@ -1,11 +1,29 @@
-﻿
+﻿@inject DependencyInjection.Services.ISingletonService _singletonService;
+@inject DependencyInjection.Services.IScopedService _scopedService;
+@inject DependencyInjection.Services.ITransientService _transientService;
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>App</title>
 </head>
 <body>
+
     <p>
-        
+        Transient =  @ViewBag.Transient
+        <br />
+        Transient2 = @_transientService.GuidId
+    </p>
+
+    <p>
+        Scoped =  @ViewBag.Scoped
+        <br />
+        Scoped2 = @_scopedService.GuidId
+    </p>
+
+    <p>
+        Singleton =  @ViewBag.Singleton
+        <br />
+        Sinleton2 = @_singletonService.GuidId
     </p>
 
 </body>
